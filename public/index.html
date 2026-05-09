@@ -2,53 +2,102 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>AI Chatbot</title>
-
-    <!-- CSS -->
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botz LLM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="chat-container">
+    <!-- Ambient background blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
 
-        <h1>Botz LLm's</h1>
+    <!-- Scanline overlay -->
+    <div class="scanlines"></div>
 
-        <!-- Chat Messages -->
-        <div id="chat-box"></div>
+    <div class="chat-wrapper">
+
+        <!-- Header -->
+        <header class="chat-header">
+            <div class="header-glow"></div>
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <span class="logo-pulse"></span>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>BOTZ <span class="accent">LLM</span></h1>
+                    <p class="subtitle">Neural Interface v2.4</p>
+                </div>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span class="status-label">ONLINE</span>
+            </div>
+        </header>
+
+        <!-- Chat Box -->
+        <div class="chat-container">
+            <div id="chat-box">
+
+                <!-- Welcome message -->
+                <div class="message bot-message">
+                    <div class="avatar bot-avatar">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                        </svg>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-bubble">
+                            Hello, human. I'm Botz — your neural language interface. Ask me anything and I'll process it across my network.
+                        </div>
+                        <div class="message-time">Just now</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
         <!-- Input Area -->
-        <div class="input-area">
-
-            <input
-                type="text"
-                id="user-input"
-                placeholder="Ask something..."
-            >
-
-            <button id="send-btn">
-                Send
-            </button>
-
+        <div class="input-wrapper">
+            <div class="input-area">
+                <div class="input-glow"></div>
+                <div class="input-prefix">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </div>
+                <input
+                    type="text"
+                    id="user-input"
+                    placeholder="Transmit your query..."
+                    autocomplete="off"
+                >
+                <button id="send-btn" aria-label="Send message">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <line x1="22" y1="2" x2="11" y2="13"/>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    </svg>
+                    <span>SEND</span>
+                </button>
+            </div>
+            <div class="input-footer">
+                <span class="footer-tag">⬡ Encrypted end-to-end</span>
+                <span class="footer-tag">⬡ GPT-class model</span>
+                <span class="footer-tag">⬡ Zero data retention</span>
+            </div>
         </div>
 
     </div>
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
-
 </body>
 
 </html>
